@@ -14,9 +14,8 @@ public class RMIServer {
 
             Random random = new Random();
             Service service = new ServiceImpl();
-            for (int i = 66; i < 122; i++) {
-//                char randomChar = (char) random.nextInt(65,122);
-                service.addElem((char) i);
+            for (int i = 0; i < 50; i++) {
+                service.addElem((char) random.nextInt(65,122));
             }
 
             String serviceName = "Service";
