@@ -9,9 +9,9 @@ public interface Service extends Remote {
     Character pollElem() throws RemoteException;
     void addElem(Character chr) throws RemoteException;
     boolean isEmpty() throws RemoteException;
-    List<Character> getNewChars() throws RemoteException;
+    List<Character> getNewChars() throws RemoteException, InterruptedException;
     void addNewChar(Character character) throws RemoteException;
     List<Character> returnResult() throws RemoteException, InterruptedException;
-    public void setWorking(boolean isWorking) throws RemoteException;
-    public boolean isWorking() throws RemoteException;
+    void setWorking(boolean isWorking) throws RemoteException;
+    boolean isWorking() throws RemoteException;
 }

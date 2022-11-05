@@ -14,10 +14,9 @@ public class RMIClient {
             while (service.isWorking()) {
                 Character chr = service.pollElem();
                 System.out.println("Received: " + chr);
-                service.addElem(chr);
                 System.out.println("New Value: " + changeChar(chr));
                 service.addNewChar(chr);
-                Thread.sleep(100);
+                Thread.sleep(1000);
 
                 if (service.isEmpty()) {
                     System.out.println("Queue is empty");

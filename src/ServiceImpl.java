@@ -18,13 +18,18 @@ public class ServiceImpl extends UnicastRemoteObject implements Service {
         this.newChars = new ArrayList<>();
     }
 
-    public List<Character> getNewChars() throws RemoteException{
+    public List<Character> getNewChars() throws RemoteException, InterruptedException {
+        while (!isEmpty() && isWorking()){
+            //does literally nothing
+        }
+        Thread.sleep(1000);
         return newChars;
     }
 
     @Override
     public void addNewChar(Character character) throws RemoteException{
         newChars.add(character);
+        System.out.println("Added to New Char List: " + character);
     }
 
     @Override
