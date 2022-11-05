@@ -20,7 +20,7 @@ public class ServiceImpl extends UnicastRemoteObject implements Service {
 
     public List<Character> getNewChars() throws RemoteException, InterruptedException {
         while (!isEmpty() && isWorking()){
-            //does literally nothing
+            //does literally nothing, just waits
         }
         Thread.sleep(1000);
         return newChars;
